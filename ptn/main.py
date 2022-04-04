@@ -100,7 +100,7 @@ def VOICE(update: Update, context: CallbackContext) -> None:
             gmail=jsn['member'][(update.message.text).split('+')[1]]
             gmail1=(update.message.text).split('+')[1]
         except:pass
-        if(update.message.text).split('+')[1] in jsn['member'].keys() and pas!=-1 and (update.message.text).split('+')[0]=='oliver_4669':
+        if(update.message.text).split('+')[1] in jsn['member'].keys() and pas!=-1 and (update.message.text).split('+')[0]=='***********':
             global bol
             bol=True
             reply_keyboard = [['👍ویرایش','👍نمایش']]
@@ -161,7 +161,7 @@ def report(update: Update, context: CallbackContext) -> None:
 
 def main() -> None:
     """Start the bot."""
-    updater = Updater("5126575062:AAGIIdiZftf1DbC26iaM53zLaWbZ4yXYe_s")
+    updater = Updater("**********************************************")
 
     dispatcher = updater.dispatcher
 
