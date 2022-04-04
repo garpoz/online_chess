@@ -1,0 +1,72 @@
+extends layout
+
+block content
+
+  #banner.jumbotron
+    .container
+
+      h1 Online Chess
+
+                <a target="_blank" class="hirr" href="/Practice";">                                                                               Practice
+
+                </a>
+      p#baba playChessCoin.com
+      <div id="share-bar"></div>
+      <input class="btn btn-default active" readonly type="text" id="myInput">
+      <button class="btn btn-primary" id ="h-btnbg"onclick="myFunction()" >📋Copy invitation link</button>
+      p.
+      ♔ ♕ ♗ ♘ ♙ ♖ ♚ ♛ ♝ ♞ 😷
+      p.
+
+                <a class="hide-button btn btn-primary" href="#" onclick="signOut();">                                                                               Sign Out
+                </a>
+        <div class="g-signin2 garpoz" data-onsuccess="onSignIn"></div>
+
+
+      .col-sm-6 
+            h4#email-name Your Email: _
+            h4#id-name Your Id: _
+            h4#pool-name Your Credit: _
+            h4#ip-name 0
+  .container
+    .row
+      .col-sm-6
+        h2 Start a New Game
+        form#startForm(action="/start", method="POST", role="form")
+          .form-group
+            label Play as
+            div
+              .btn-group(data-toggle="buttons")
+                label.btn.btn-default.active
+                  input(type="radio", name="player-color", value="white", checked="checked")
+                  | White
+                label.btn.btn-default
+                  input(type="radio", name="player-color", value="black")
+                  | Black
+          .form-group
+            label#much(for="playerName") How Much 
+            input#playerName.form-control(type="text",placeholder="It can only be to the power of ten", name="player-name",pattern="^10+$")
+          button.btn.btn-primary.fasele(type="submit",disabled) Start Game
+      .col-sm-6 
+
+        h2 Join an Existing Game
+        form#joinForm(action="/join", method="POST", role="form")
+          .form-group
+            label(for="gameID") How Much
+            input#gameID.form-control(type="text",placeholder="It can only be to the power of ten", name="game-id",pattern="^10+$")
+          .form-group
+            label(hidden,for="playerName") Name
+            input#playerName.form-control(type="hidden", name="player-name", placeholder="Player 2")
+          button.btn.btn-primary.fasele(type="submit",disabled) Join Game
+
+
+  h6#garpozir ️ &#169;Copyright2022
+  script(src="/js/jquery.min.js")
+  script(src="/js/bootstrap.min.js")
+
+
+  link(type="text/css", href="https://use.fontawesome.com/releases/v5.0.6/css/all.css", rel="stylesheet")
+  link(rel="stylesheet", type="text/css", href="css/jquery-social-share-bar.css")
+  script(type="text/javascript", src="js/jquery-social-share-bar.js")
+
+  script(src="/js/auth.js")
